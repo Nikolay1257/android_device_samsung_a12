@@ -1,0 +1,29 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+# Mount point       FS        Device                                2nd Device          Flags
+/boot               emmc      /dev/block/platform/bootdevice/by-name/boot               flags=backup=1;flashimg=1;display="Boot";
+/recovery           emmc      /dev/block/platform/bootdevice/by-name/recovery           flags=backup=1;flashimg=1;display="Recovery";
+/cache              ext4      /dev/block/platform/bootdevice/by-name/cache              flags=backup=1;display="Cache";
+/efs                ext4      /dev/block/platform/bootdevice/by-name/sec_efs            flags=backup=1;display="EFS";
+/misc               emmc      /dev/block/platform/bootdevice/by-name/misc               flags=backup=1;flashimg=1;display="Misc";
+/metadata           ext4      /dev/block/platform/bootdevice/by-name/md_udc             flags=backup=1;display="Metadata";
+/modem              emmc      /dev/block/platform/bootdevice/by-name/apnhlos            flags=backup=1;display="Modem";
+/dtbo               emmc      /dev/block/platform/bootdevice/by-name/dtbo               flags=backup=1;flashimg=1;display="DTBO";
+/md1img             emmc      /dev/block/platform/bootdevice/by-name/md1img 
+
+# Other partitions point
+/optics_image       emmc         /dev/block/by-name/optics            flags=backup=1;display="Optics Image";
+/prism_image        emmc         /dev/block/by-name/prism             flags=backup=1;display="Prism Image";
+/omr_image          emmc         /dev/block/by-name/omr               flags=backup=1;display="OMR Image";
+
+# Logical point
+/system_image       emmc         /dev/block/mapper/system             flags=backup=1;flashimg=1;display="System Image"
+/vendor_image       emmc         /dev/block/mapper/vendor             flags=backup=1;flashimg=1;display="Vendor Image";
+/product_image      emmc         /dev/block/mapper/product            flags=backup=1;flashimg=1;display="Product Image";
+/odm_image          emmc         /dev/block/mapper/odm                flags=backup=1;flashimg=1;display="ODM Image";
+
+# SD Card & USB-OTG Points
+/external_sd        auto  /dev/block/mmcblk1p1     /dev/block/mmcblk1 flags=display="MicroSD Card";storage;wipeingui;removable
+/usb_otg            auto  /dev/block/sda1          /dev/block/sda     flags=display="USB-OTG";storage;wipeingui;removable
