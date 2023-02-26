@@ -102,6 +102,8 @@ TW_USE_TOOLBOX := true
 TW_USE_SAMSUNG_HAPTICS := true
 TW_Y_OFFSET := 50
 TW_H_OFFSET := -50
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
 
 # TWRP Configuration: Brightness/CPU
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
