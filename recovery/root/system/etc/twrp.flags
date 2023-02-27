@@ -18,7 +18,6 @@
 
 # ETC Moint Point
 /cache              ext4         /dev/block/platform/bootdevice/by-name/cache             flags=backup=1;display="Cache";wipeingui
-/metadata           ext4         /dev/block/platform/bootdevice/by-name/md_udc            flags=backup=1;display="Metadata";wipeingui;wrappedkey
 
 # Logical point
 /system_image       emmc         /dev/block/mapper/system             flags=backup=1;flashimg=1;display="System Image"
