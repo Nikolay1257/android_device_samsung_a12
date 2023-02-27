@@ -23,5 +23,5 @@ Your DATA partition will be secured against re-encryption.
 
 
 Blobs version:
-> Kernel base: Compiled from source A125FXXU2BVG6 [Kernel] (https://github.com/Nikolay1257/android_kernel_samsung_a12)
+> Kernel base: Compiled from source A125FXXU2BVG6 [Kernel](https://github.com/Nikolay1257/android_kernel_samsung_a12)
 
